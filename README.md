@@ -13,7 +13,9 @@ Saad Anwer -         1222307476 <br>
 **Frontend** - D3 JS, HTML, CSS
 
 **Backend** - Python, Flask
-
+```bash
+Note: **Please check the dashboard utility pdf to  find out the visualizations that were implemented to create the dashboard and how they give deeper insights inorder to solve the problem.**
+```
 ## How to run the project:
 
 Clone the repository using the command 
@@ -53,7 +55,5 @@ Hurray, now open a firefox browser and type below localhost url to view our proj
 ```bash
 http://localhost:8000
 ```
-```bash
-**Note: Please check the dashboard utility pdf to  find out the visualizations that were implemented to create the dashboard and how they give deeper insights inorder to solve the problem.**
-```
+
 **Thank You**
