@@ -62,21 +62,15 @@ def getgeoData(startTime,endTime):
     geoSlice=data[int(startTime):int(endTime)]
  
     geoSlice.drop(columns=['time'],inplace=True)
-    #print("THis is Data Slice after drop:",geoSlice)
     geoSlice.reset_index(drop=True,inplace=True)
-    #geoSlice[['sewer_and_water', 'power','roads_and_bridges','medical','buildings','shake_intensity','location']] = geoSlice[['sewer_and_water', 'power','roads_and_bridges','medical','buildings','shake_intensity','location']].astype(float)
     geoSlice=geoSlice.groupby('location').mean()
     dicts={}
-   # print("THis is Data Slice:",geoSlice)
     for i in range(1,20):
         try:
             dicts[i]=geoSlice.iloc[i-1].to_list()
             dicts[i]=[str(int(round(elem,2))*10) for elem in dicts[i]]
         except:
             dicts[i]=['0','0','0','0','0','0']
-    #print("geo data being sent from python: ",dicts)
-    #dataSliceTopLocationSelected.drop(columns=['location'],inplace=True)
-    #dataSliceTopLocationSelected['time']=[i for i in range(len(dataSliceTopLocationSelected))]
     return  json.dumps(dicts)
 
 if __name__ == '__main__':
